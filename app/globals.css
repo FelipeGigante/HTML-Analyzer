@@ -1,0 +1,144 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Melhorias de responsividade para dispositivos móveis */
+@media (max-width: 640px) {
+  /* Aumentar área de toque para elementos interativos */
+  button,
+  [role="button"],
+  a {
+    min-height: 44px;
+    touch-action: manipulation;
+  }
+
+  /* Melhorar legibilidade de texto em telas pequenas */
+  p,
+  li,
+  span {
+    font-size: 0.875rem; /* equivalente a text-sm */
+  }
+
+  /* Ajustar espaçamento em telas pequenas */
+  .container {
+    padding-left: 0.75rem; /* equivalente a px-3 */
+    padding-right: 0.75rem;
+  }
+
+  /* Evitar overflow de texto em elementos com espaço limitado */
+  .truncate-mobile {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+/* Ajustes para telas muito pequenas */
+@media (max-width: 360px) {
+  h1 {
+    font-size: 1.25rem; /* equivalente a text-xl */
+  }
+
+  h2 {
+    font-size: 1.125rem; /* equivalente a text-lg */
+  }
+
+  p,
+  li,
+  span {
+    font-size: 0.75rem; /* equivalente a text-xs */
+  }
+
+  .card-content-mobile {
+    padding: 0.5rem; /* equivalente a p-2 */
+  }
+}
+
+/* Melhorar acessibilidade de foco */
+:focus-visible {
+  outline-width: 2px;
+  outline-offset: 2px;
+  outline-color: #3b82f6; /* equivalente a outline-blue-500 */
+}
+
+/* Melhorar contraste para elementos de texto */
+.text-muted-foreground {
+  color: #4b5563; /* equivalente a text-gray-600 */
+}
+
+.dark .text-muted-foreground {
+  color: #d1d5db; /* equivalente a dark:text-gray-300 */
+}
